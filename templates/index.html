@@ -1,0 +1,24 @@
+{{ template "header.html" . }}
+
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                Vaata kuulutusi
+            </h1>
+            <div class="columns">
+                {{ range .}}
+                <div class="column">
+                    <h2>
+                        <a href="/kuulutus/{{ .ID}}">{{ .Title}}</a>
+                    </h2>
+                    <figure class="image is-128x128">
+                        <img src={{ .Thumbnail}}>
+                    </figure>
+                </div>
+                {{end}}
+            </div>
+        </div>
+    </section>
+</body>
+{{ template "footer.html" .}}
