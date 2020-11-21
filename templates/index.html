@@ -6,18 +6,31 @@
             <h1 class="title">
                 Vaata kuulutusi
             </h1>
-            <div class="columns">
-                {{ range .}}
-                <div class="column">
-                    <h2>
-                        <a href="/kuulutus/{{ .ID}}">{{ .Title}}</a>
-                    </h2>
-                    <figure class="image is-128x128">
+            {{ range .}}
+
+            <div class="card">
+                <p class="title is-4">{{ .Direction}} | {{ .Title}} | {{ .FrameSize}} | {{ .Price}}</p>
+
+                <div class="card-image">
+                    <figure class="image is-4by3">
                         <img src={{ .Thumbnail}}>
                     </figure>
                 </div>
-                {{end}}
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+                            <p class="subtitle is-6">@{{ .Location}}</p>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <a href="/kuulutus/{{ .ID}}">Vaata kuulutust</a>
+                        <br>
+                        <p>Lisatud: <time datetime={{ .Added}}>{{ .Added}}</time></p>
+                    </div>
+                </div>
             </div>
+            <br> {{end}}
         </div>
     </section>
 </body>

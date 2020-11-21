@@ -130,10 +130,6 @@ func getSelectionValues(input map[uint]string, userSelection uint) []SelectionVa
 	return selectionValues
 }
 
-func getAdValueById(input map[uint]string, AdValueID uint) string {
-	return input[AdValueID]
-}
-
 func RenderAd(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	db := utils.DbConnection()
@@ -151,12 +147,12 @@ func RenderAd(w http.ResponseWriter, r *http.Request) {
 		frameMaterials := constants.GetFrameMaterials()
 
 		postedAd := &PostedAd{
-			AdType:             getAdValueById(adTypes, ad.AdTypeID),
-			BikeType:           getAdValueById(bikeTypes, ad.BikeTypeID),
-			Direction:          getAdValueById(adDirections, ad.AdDirectionID),
-			FrameMaterial:      getAdValueById(frameMaterials, ad.FrameMaterialID),
-			FrameSize:          getAdValueById(frameSizes, ad.FrameSizeID),
-			Location:           getAdValueById(adLocations, ad.LocationID),
+			AdType:             ad.GetAdValueById(adTypes, ad.AdTypeID),
+			BikeType:           ad.GetAdValueById(bikeTypes, ad.BikeTypeID),
+			Direction:          ad.GetAdValueById(adDirections, ad.AdDirectionID),
+			FrameMaterial:      ad.GetAdValueById(frameMaterials, ad.FrameMaterialID),
+			FrameSize:          ad.GetAdValueById(frameSizes, ad.FrameSizeID),
+			Location:           ad.GetAdValueById(adLocations, ad.LocationID),
 			Description:        ad.Description,
 			FrameSizeDesc:      ad.FrameSizeDescription,
 			LocationDetailDesc: ad.LocationDescription,

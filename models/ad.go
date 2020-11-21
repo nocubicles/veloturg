@@ -29,6 +29,10 @@ type Ad struct {
 	ValidationErrors     map[string]string `gorm:"-"`
 }
 
+func (ad *Ad) GetAdValueById(input map[uint]string, AdValueID uint) string {
+	return input[AdValueID]
+}
+
 func (ad *Ad) Validate() bool {
 	ad.ValidationErrors = make(map[string]string)
 
