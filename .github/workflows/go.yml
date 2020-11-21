@@ -36,7 +36,7 @@ jobs:
       run: go test -v .
 
     - name: Deploy to Server
-      uses: easingthemes/ssh-deploy@2.1.5
+      uses: easingthemes/ssh-deploy@v2.1.5
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
         SOURCE: "dist/"
