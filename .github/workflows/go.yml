@@ -30,7 +30,7 @@ jobs:
         fi
 
     - name: Build
-      run: go build -v . -o bin
+      run: go build -o bin/veloturg
 
     - name: Test
       run: go test -v .
