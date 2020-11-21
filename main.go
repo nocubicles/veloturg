@@ -18,7 +18,7 @@ func confirmation(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	err := godotenv.Load(".emv", "~/.env")
+	err := godotenv.Load(".emv", "home/veloturg/.env")
 	if err != nil {
 		fmt.Println("cannot find .env file")
 	}
