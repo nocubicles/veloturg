@@ -12,6 +12,7 @@ import (
 )
 
 func confirmation(w http.ResponseWriter, r *http.Request) {
+
 	utils.Render(w, "confirmation.html", nil)
 }
 
