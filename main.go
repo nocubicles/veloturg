@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
@@ -19,7 +20,7 @@ func confirmation(w http.ResponseWriter, r *http.Request) {
 func main() {
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatal("cannot find .env file")
+		fmt.Println("cannot find .env file")
 	}
 	router := mux.NewRouter()
 	router.HandleFunc("/confirmation", confirmation).Methods("GET")
