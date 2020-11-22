@@ -9,13 +9,7 @@ import (
 	"github.com/joho/godotenv"
 	"github.com/nocubicles/veloturg/src/middleware"
 	"github.com/nocubicles/veloturg/src/routes"
-	"github.com/nocubicles/veloturg/src/utils"
 )
-
-func confirmation(w http.ResponseWriter, r *http.Request) {
-
-	utils.Render(w, "confirmation.html", nil)
-}
 
 func main() {
 	err := godotenv.Load("../.env")
@@ -25,7 +19,6 @@ func main() {
 	}
 
 	router := mux.NewRouter()
-	router.HandleFunc("/confirmation", confirmation).Methods("GET")
 	router.HandleFunc("/logisisse", routes.RenderSignIn).Methods("GET")
 	router.HandleFunc("/logisisse", routes.SendSignInEmail).Methods("POST")
 	router.HandleFunc("/kuulutus", middleware.CheckIsUsedLoggedIn(routes.RenderAdForm)).Methods("GET")

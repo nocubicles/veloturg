@@ -87,13 +87,16 @@ func SendSignInEmail(w http.ResponseWriter, r *http.Request) {
 
 	if signInData.validate() == false {
 		utils.Render(w, "signin.html", signInData)
+		return
 	}
 
 	if err := signInData.send(); err != nil {
 		log.Println(err)
 		http.Error(w, "Vabandame. Emaili ei saa saata", http.StatusInternalServerError)
-
+		return
 	}
+	utils.Render(w, "confirmation.html", nil)
+
 }
 
 func (signIndata *SignInData) validate() bool {
