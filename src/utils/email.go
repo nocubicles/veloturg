@@ -31,11 +31,14 @@ func sendEmail(to []string, msg []byte) error {
 
 func SendSignInEmail(to string, signInToken string) error {
 	server := os.Getenv("SERVER")
+	fromEmail := os.Getenv("fromEmail")
+	fromMime := fmt.Sprintf("From: %s\n", fromEmail)
 	loginLink := fmt.Sprintf("<a href='%s/signin?signintoken=%s'>lingile</a>", server, signInToken)
 	mime := "MIME-version: 1.0;\nContent-Type: text/html; charset=\"UTF-8\";\n\n"
 
 	msg := fmt.Sprintf(
 		"To: %s\r\n"+
+			fromMime+
 			"Subject: Teie sisse logimise link veloturg.ee\n"+
 			mime+
 			"<html><body>"+
