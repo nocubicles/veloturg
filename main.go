@@ -7,7 +7,6 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
-	"github.com/markbates/pkger"
 	"github.com/nocubicles/veloturg/src/middleware"
 	"github.com/nocubicles/veloturg/src/routes"
 	"github.com/nocubicles/veloturg/src/utils"
@@ -24,8 +23,6 @@ func main() {
 	if err != nil {
 		fmt.Println("cannot find .env file")
 	}
-
-	pkger.Include("/src/templates")
 
 	router := mux.NewRouter()
 	router.HandleFunc("/confirmation", confirmation).Methods("GET")

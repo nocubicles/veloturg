@@ -9,7 +9,6 @@ require (
 	github.com/jinzhu/gorm v1.9.16
 	github.com/joho/godotenv v1.3.0
 	github.com/lib/pq v1.8.0 // indirect
-	github.com/markbates/pkger v0.17.1
 	gorm.io/driver/postgres v1.0.5
 	gorm.io/gorm v1.20.6
 )

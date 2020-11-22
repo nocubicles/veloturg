@@ -33,7 +33,7 @@ jobs:
       run: go build -o bin/veloturg
 
     - name: Copy static files
-      run: cp -r src/templates bin/static
+      run: cp -r static bin/static
         
     - name: Test
       run: go test -v .
