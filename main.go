@@ -7,9 +7,9 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
-	"github.com/nocubicles/veloturg/middleware"
-	"github.com/nocubicles/veloturg/routes"
-	"github.com/nocubicles/veloturg/utils"
+	"github.com/nocubicles/veloturg/src/middleware"
+	"github.com/nocubicles/veloturg/src/routes"
+	"github.com/nocubicles/veloturg/src/utils"
 )
 
 func confirmation(w http.ResponseWriter, r *http.Request) {

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/nocubicles/veloturg/models"
+	"github.com/nocubicles/veloturg/src/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )

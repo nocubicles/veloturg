@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/nocubicles/veloturg/models"
-	"github.com/nocubicles/veloturg/utils"
+	"github.com/nocubicles/veloturg/src/models"
+	"github.com/nocubicles/veloturg/src/utils"
 )
 
 func CheckIsUsedLoggedIn(next http.HandlerFunc) http.HandlerFunc {

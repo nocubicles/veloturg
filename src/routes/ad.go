@@ -11,9 +11,9 @@ import (
 	"time"
 
 	"github.com/gorilla/mux"
-	"github.com/nocubicles/veloturg/constants"
-	"github.com/nocubicles/veloturg/models"
-	"github.com/nocubicles/veloturg/utils"
+	"github.com/nocubicles/veloturg/src/constants"
+	"github.com/nocubicles/veloturg/src/models"
+	"github.com/nocubicles/veloturg/src/utils"
 )
 
 type SelectionValue struct {

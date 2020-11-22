@@ -8,8 +8,8 @@ import (
 	"time"
 
 	"github.com/gofrs/uuid"
-	"github.com/nocubicles/veloturg/models"
-	"github.com/nocubicles/veloturg/utils"
+	"github.com/nocubicles/veloturg/src/models"
+	"github.com/nocubicles/veloturg/src/utils"
 )
 
 var emailRegex = regexp.MustCompile(".+@.+\\..+")
