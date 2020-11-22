@@ -31,6 +31,7 @@ jobs:
 
     - name: Build
       run: go build -o bin/veloturg
+      run: mv ./src/templates bin/src/templates
 
     - name: Test
       run: go test -v .
