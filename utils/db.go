@@ -12,7 +12,6 @@ import (
 //DbConnection returns the connection to use the db
 func DbConnection() (db *gorm.DB) {
 	dsn := os.Getenv("DBConnectionString")
-	fmt.Println(dsn)
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 
 	if err != nil {
