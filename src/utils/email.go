@@ -30,7 +30,8 @@ func sendEmail(to []string, msg []byte) error {
 }
 
 func SendSignInEmail(to string, signInToken string) error {
-	loginLink := fmt.Sprintf("<a href='http://localhost:3000/signin?signintoken=%s'>lingile</a>", signInToken)
+	server := os.Getenv("SERVER")
+	loginLink := fmt.Sprintf("<a href='%s/signin?signintoken=%s'>lingile</a>", server, signInToken)
 	mime := "MIME-version: 1.0;\nContent-Type: text/html; charset=\"UTF-8\";\n\n"
 
 	msg := fmt.Sprintf(
