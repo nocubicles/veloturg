@@ -31,8 +31,8 @@ jobs:
 
     - name: Build
       run: go build -o bin/veloturg
-    - name: Move static files
-      run: mv src/templates bin/src/templates
+    - name: Copy static files
+      run: cp src/templates bin/src/templates
     - name: Test
       run: go test -v .
 
