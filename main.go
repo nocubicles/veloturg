@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"log"
 	"net/http"
@@ -12,7 +13,10 @@ import (
 )
 
 func main() {
-	err := godotenv.Load("../.env")
+	envPath := flag.String("envPath", "~/.env", "Path where env file is located")
+	flag.Parse()
+
+	err := godotenv.Load(*envPath)
 
 	if err != nil {
 		fmt.Println("cannot find .env file")
