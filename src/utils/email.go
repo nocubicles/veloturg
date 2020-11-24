@@ -33,7 +33,7 @@ func SendSignInEmail(to string, signInToken string) error {
 	server := os.Getenv("SERVER")
 	fromEmail := os.Getenv("fromEmail")
 	fromMime := fmt.Sprintf("From: %s\n", fromEmail)
-	loginLink := fmt.Sprintf("<a href='%s/signin?signintoken=%s'>lingile</a>", server, signInToken)
+	loginLink := fmt.Sprintf("<a href='%s/logisisse?signintoken=%s'>lingile</a>", server, signInToken)
 	mime := "MIME-version: 1.0;\nContent-Type: text/html; charset=\"UTF-8\";\n\n"
 
 	msg := fmt.Sprintf(
@@ -43,7 +43,7 @@ func SendSignInEmail(to string, signInToken string) error {
 			mime+
 			"<html><body>"+
 			"<p>Palun vajutage %s, et logida sisse.</p>"+
-			"<p>veloturg.ee</p>"+
+			"<p>veloturg</p>"+
 			"</body></html>",
 		to, loginLink,
 	)
